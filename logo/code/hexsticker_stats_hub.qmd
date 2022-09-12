@@ -22,6 +22,11 @@ library(hexSticker)
 library(sysfonts)
 
 ```
+# Example defining palette
+```{r}
+party_colors <- c("red","blue")
+```
+
 
 ## 01. Prepare images
 
@@ -145,16 +150,29 @@ tidymonday <- sticker(
   ) 
 
 ```
-
+### Selected logo
 ```{r}
-#| echo: false
+#| echo: true
 #| warning: false
 #| message: false
 
+HEAD
+# define pallete
+palette <- list('background' = '#d8f3dc',
+                'font' = '#372549',
+                'border' = '#372549',
+                'note' = 'grey25')
+
+# Single Palette elements
+background_color <- '#d8f3dc'
+font_color <- '#372549'
+border_color <- '#372549'
+note_color <- 'grey25'
 bakcground_color = '#d8f3dc'
 font_color = "#372549"
 border_color = font_color
 note_color = "black"
+main
 
 statasaurus <- sticker(
   # Title
@@ -172,7 +190,7 @@ statasaurus <- sticker(
   s_x = 1,
   s_y = 1.2,
   # Hexagon attributes
-  h_fill = bakcground_color,
+  h_fill = background_color,
   h_color = border_color,
   h_size = 2,
   # Add a link
@@ -184,10 +202,9 @@ statasaurus <- sticker(
   # Spotlight attributes
   # add some shadow to the pictures
   l_y = 1,
-  l_x = 1,
   l_width = 3,
   l_height = 3,
-  l_alpha = 0.3,
+  l_alpha = 0.5,
   # File saving
   filename = "selected_logo.png",
   dpi = 300,
